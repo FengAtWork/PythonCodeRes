@@ -2,43 +2,30 @@
 # Feng Lin 
 # Using Git on Git Bash
 ########################################
-# Print Hello World To the Screen
-#
-########################################
-# DATA TYPES
-# Strings
-# Numbers
-# Lists
-# Tuples
-# Dictionaries
-# Boolean
-#######################################
-#
-#
-#
-
+# clear the terminal
+from tkinter import *
 import os
 os.system('clear')
 
-first_name = "Feng"
-last_name = "Lin"
-age = 53
+##################
+# TKinter GUI
+##################
 
-# list
-names = ["John", "Bob", "Mary"]
+root = Tk()
+root.title('Feng - first GUI in Python')
+root.geometry("400x600")
 
-# tuples
-tuple_names = ('John', 'Bob', 'Mary')
+def hello():
+	hello_label = Label(root, text = "Hello " + myTextbox.get())
+	hello_label.pack()
 
-# dictionary
-fav_pizza= {
-	"John": "Pepperoni",
-	"Bob": "Mushroom",
-	"Mary": "Cheese"
-	}
+myLabel = Label(root, text = "Enter your first name:")
+myLabel.pack()
 
-print(first_name + " " + last_name + " " + str(age))
-print(names)
-print(tuple_names)
-print(fav_pizza["John"])
-print(fav_pizza["Mary"])
+myTextbox = Entry(root, width=30)
+myTextbox.pack()
+
+myButton = Button(root, text = "Submit", command = hello)
+myButton.pack()
+
+root.mainloop()
